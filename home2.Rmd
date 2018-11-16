@@ -1,0 +1,306 @@
+---
+title: "homework2"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> first_num <- 8
+> second_num <- 7
+> first_num + second_num
+[1] 15
+> first_num - second_num
+[1] 1
+> first_num * second_num
+[1] 56
+> first_num / second_num
+[1] 1.142857
+> first_num^second_num
+[1] 2097152
+> first_num %% second_num
+[1] 1
+> 
+> first_int <- 8L
+> second_int <- 7L
+> ans <- first_int * second_int
+> ans
+[1] 56
+> class(ans)
+[1] "integer"
+> ans <- first_int / second_int
+> ans
+[1] 1.142857
+> class(ans)
+[1] "numeric"
+> 
+> my_num <- 8
+> my_int <- 7L
+> ans <- my_num + my_int
+> class(ans)
+[1] "numeric"
+> my_num <- 0
+> my_int <- 0L
+> my_logi <- FALSE
+> my_num == my_logi
+[1] TRUE
+> my_int == my_logi
+[1] TRUE
+> my_num <- 1
+> my_int <- 1L
+> my_logi <- TRUE
+> my_num == my_logi
+[1] TRUE
+> my_int == my_logi
+[1] TRUE
+> 
+> my_logi <- TRUE
+> ans <- my_num + my_int + my_logi
+> ans
+[1] 3
+> class(ans)
+[1] "numeric"
+> my_logi <- FALSE
+> ans <- my_num + my_int + my_logi
+> ans
+[1] 2
+> class(ans)
+[1] "numeric"
+> x <- c(1,2,3,4)
+> x
+[1] 1 2 3 4
+> season_1 <- "spring"
+> season_2 <- "summer"
+> season_3 <- "autumn"
+> season_4 <- "winter"
+> four_seasons <- c("spring", "summer", "autumn", "winter") 
+> four_seasons
+[1] "spring" "summer" "autumn" "winter"
+> rep("2", times = 10)
+ [1] "2" "2" "2" "2" "2" "2" "2" "2" "2" "2"
+> rep("R", times = 10)
+ [1] "R" "R" "R" "R" "R" "R" "R" "R" "R" "R"
+> seq(from = 1, to = 10, by = 1)
+ [1]  1  2  3  4  5  6  7  8  9 10
+> 1:10
+ [1]  1  2  3  4  5  6  7  8  9 10
+> 
+> lucky_numbers <- c(7L, 24)
+> class(lucky_numbers[1])
+[1] "numeric"
+> lucky_numbers <- c(7L, FALSE)
+> lucky_numbers
+[1] 7 0
+> class(lucky_numbers[2])
+[1] "integer"
+> mixed_vars <- c(TRUE, 7L, 24, "spring")
+> mixed_vars
+[1] "TRUE"   "7"      "24"     "spring"
+> class(mixed_vars[1])
+[1] "character"
+> class(mixed_vars[2])
+[1] "character"
+> class(mixed_vars[3])
+[1] "character"
+> 
+> favorite_season <- four_seasons[3]
+> favorite_season
+[1] "autumn"
+> favorite_seasons <- four_seasons[c(-2, -4)]
+> favorite_seasons?
+Error: unexpected input in "favorite_seasons\"
+> my_favorite_season <- four_seasons == "autumn"
+> four_seasons[my_favorite_season]
+[1] "autumn"
+> my_favorite_seasons <- four_seasons == "spring" | four_seasons == "autumn"
+> four_seasons[my_favorite_seasons]
+[1] "spring" "autumn"
+> 
+> numvec<-1:10 # c(1,2,3,4,5,6,7,8,9,10)
+> numvec+3 # 所有元素+3
+ [1]  4  5  6  7  8  9 10 11 12 13
+> numvec*2 # 所有元素*2
+ [1]  2  4  6  8 10 12 14 16 18 20
+> numvec1<-1:3 ## c(1,2,3)
+> numvec2<-4:6 ## c(4,5,6)
+> numvec1+numvec2
+[1] 5 7 9
+> numvec1*numvec2
+[1]  4 10 18
+> 
+> factor(c("?學?","碩?班學?","博?班學?"),
++        levels = c("?學?","碩?班學?","博?班學?"))
+[1] ?學?     碩?班學? 博?班學?
+Levels: ?學? 碩?班學? 博?班學?
+> ordered = FALSE
+> ```
+Error: attempt to use zero-length variable name
+> 
+> ```{r}
+Error: attempt to use zero-length variable name
+> four_seasons <- c("spring", "summer", "autumn", "winter")
+> four_seasons
+[1] "spring" "summer" "autumn" "winter"
+> four_seasons_factor < factor(four_seasons)
+Error: object 'four_seasons_factor' not found
+> four_seasons_factor
+Error: object 'four_seasons_factor' not found
+> four_seasons_factor <- factor(four_seasons, ordered = TRUE, levels = c("summer", "winter", "spring", "autumn"))
+> four_seasons_factor
+[1] spring summer autumn winter
+Levels: summer < winter < spring < autumn
+> temperatures <- c("warm", "hot", "cold")
+> temp_factors <- factor(temperatures, ordered = TRUE, levels = c("cold", "warm", "hot"))
+> temp_factors
+[1] warm hot  cold
+Levels: cold < warm < hot
+> temperatures <- c("warm", "hot", "cold")
+> temp_factors <- factor(temperatures, ordered = TRUE)
+> temp_factors
+[1] warm hot  cold
+Levels: cold < hot < warm
+> 
+> my_mat <- matrix(1:6, nrow = 2)
+> my_mat
+     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+> my_mat <- matrix(1:6, nrow = 2, ncol = 3, byrow = TRUE)
+> my_mat
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+> 
+> my_mat <- matrix(c(1, 2, TRUE, FALSE, 3, 4), nrow = 2)
+> my_mat
+     [,1] [,2] [,3]
+[1,]    1    1    3
+[2,]    2    0    4
+> class(my_mat[, 2])
+[1] "numeric"
+> 
+> my_mat <- matrix(1:6, nrow = 2)
+> my_mat
+     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+> my_mat[2, 3]
+[1] 6
+> my_mat[2, ]
+[1] 2 4 6
+> my_mat[, 3] ?
+Error: unexpected input in "my_mat[, 3] \"
+> filter <- my_mat < 6 & my_mat > 1
+> my_mat[filter]
+[1] 2 3 4 5
+> 
+> team_name <- c("Chicago Bulls", "Golden State Warriors")
+> wins <- c(72, 73)
+> losses <- c(10, 9)
+> is_champion <- c(TRUE, FALSE)
+> season <- c("1995-96", "2015-16")
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season)
+> View(great_nba_teams)
+> 
+> team_name <- c("Chicago Bulls", "Golden State Warriors")
+> wins <- c(72, 73)
+> losses <- c(10, 9)
+> is_champion <- c(TRUE, FALSE)
+> season <- c("1995-96", "2015-16")
+> #?法?：stringsAsFactors = FALSE
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season, stringsAsFactors = FALSE)
+> #?法?:as.character()
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season)
+> great_nba_teams[, 1] <- as.character(great_nba_teams[, 1])
+> great_nba_teams[, 5] <- as.character(great_nba_teams[, 5])
+> 
+> team_name <- c("Chicago Bulls", "Golden State Warriors")
+> wins <- c(72, 73)
+> losses <- c(10, 9)
+> is_champion <- c(TRUE, FALSE)
+> season <- c("1995-96", "2015-16")
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season)
+> #?法?：中括號搭配索引值
+> great_nba_teams[1, 1] # 選出第?個變數的第?個觀測值 "Chicago Bulls"
+[1] Chicago Bulls
+Levels: Chicago Bulls Golden State Warriors
+> great_nba_teams[1, ] # 選出第?個觀測值
+      team_name wins losses is_champion  season
+1 Chicago Bulls   72     10        TRUE 1995-96
+> great_nba_teams[, 1] # 選出第?個變數
+[1] Chicago Bulls         Golden State Warriors
+Levels: Chicago Bulls Golden State Warriors
+> #?法?：使?變數名稱來選擇
+> great_nba_teams[, "season"]
+[1] 1995-96 2015-16
+Levels: 1995-96 2015-16
+> # **?法三：使?變數名稱與$來選擇**
+> great_nba_teams$team_name
+[1] Chicago Bulls         Golden State Warriors
+Levels: Chicago Bulls Golden State Warriors
+> #?法四：使?判斷運算?
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season, stringsAsFactors = FALSE)
+> filter <- great_nba_teams$is_champion == TRUE
+> great_nba_teams[filter, ] # 注意這個逗號
+      team_name wins losses is_champion  season
+1 Chicago Bulls   72     10        TRUE 1995-96
+> team_name <- c("Chicago Bulls", "Golden State Warriors")
+> wins <- c(72, 73)
+> losses <- c(10, 9)
+> is_champion <- c(TRUE, FALSE)
+> season <- c("1995-96", "2015-16")
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season)
+> #?法?：中括號搭配索引值
+> great_nba_teams[1, 1] # 選出第?個變數的第?個觀測值 "Chicago Bulls"
+[1] Chicago Bulls
+Levels: Chicago Bulls Golden State Warriors
+> great_nba_teams[1, ] # 選出第?個觀測值
+      team_name wins losses is_champion  season
+1 Chicago Bulls   72     10        TRUE 1995-96
+> great_nba_teams[, 1] # 選出第?個變數
+[1] Chicago Bulls         Golden State Warriors
+Levels: Chicago Bulls Golden State Warriors
+> #?法?：使?變數名稱來選擇
+> great_nba_teams[, "season"]
+[1] 1995-96 2015-16
+Levels: 1995-96 2015-16
+> # **?法三：使?變數名稱與$來選擇**
+> great_nba_teams$team_name
+[1] Chicago Bulls         Golden State Warriors
+Levels: Chicago Bulls Golden State Warriors
+> #?法四：使?判斷運算?
+> great_nba_teams <- data.frame(team_name, wins, losses, is_champion, season, stringsAsFactors = FALSE)
+> filter <- great_nba_teams$is_champion == TRUE
+> great_nba_teams[filter, ] # 注意這個逗號
+      team_name wins losses is_champion  season
+1 Chicago Bulls   72     10        TRUE 1995-96
+> 
+> M <- matrix(c(4, 2, -7, -3), nrow = 2, ncol = 2)
+> M_inv <- solve(M)
+> M_inv
+     [,1] [,2]
+[1,] -1.5  3.5
+[2,] -1.0  2.0
+> # 並不是每個矩陣都具有反矩陣
+> M <- matrix(c(8, 12, 2, 3), nrow = 2, ncol = 2)
+> tryCatch(solve(M), error = function(e){
++   print("矩陣為不可逆矩陣")
++ })
+[1] "矩陣為不可逆矩陣"
